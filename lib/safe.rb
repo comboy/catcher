@@ -1,0 +1,4 @@
+module Safe
+
+end
+
