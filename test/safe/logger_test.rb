@@ -30,5 +30,5 @@ describe Safe::Logger do
     @output.strip.must_match /I, \[(.*)\] *INFO -- : TestClass : class method$/
   end
 
-  # TODO test other log methods (debug, fatel etc.)
+  # TODO test coverage other log methods (debug, fatel etc.)
 end
