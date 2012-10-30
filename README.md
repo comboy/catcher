@@ -17,7 +17,7 @@ Arguments are the same as for Logger.new. Then in your classes:
       end
     end
 
-It could be also instance method. It will produce something like this:
+It could also be an instance method. It will produce something like this:
 
     I, [2012-10-30 10:56:45 #20295]  INFO -- : Foo : gangnam style
 
@@ -36,10 +36,10 @@ Exception gets catched and logged like this:
       (irb):2:in `irb_binding'
       (.. full backtrace here ..)
 
-And finally forget about Thread.new, just use:
+And finally, for threads, just use:
 
     Catcher.thread "doing science" do
-      # your stuff
+      # your stuff in a thread
     end
 
 Which is equal to Thread.new with Catcher.block inside.
