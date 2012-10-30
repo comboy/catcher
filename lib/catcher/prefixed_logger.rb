@@ -1,4 +1,4 @@
-module Safe
+module Catcher
   
    class PrefixedLogger
      def initialize(logger, prefix)

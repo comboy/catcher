@@ -1,8 +1,8 @@
 require 'logger'
-require 'safe/prefixed_logger'
-require 'safe/logger'
+require 'catcher/prefixed_logger'
+require 'catcher/logger'
 
-module Safe
+module Catcher
 
   def self.block(progname = nil)
     begin
@@ -28,7 +28,7 @@ module Safe
       # This software is UFO ready
       text << "Some not very exceptional object raised o_O #{e.inspect} [#{e.class}]"
     end
-    Safe.logger.error text
+    Catcher.logger.error text
   end
 
   def self.logger

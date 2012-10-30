@@ -1,8 +1,8 @@
 require 'test_helper'
-require 'safe'
+require 'catcher'
 
 class TestClass
-  include Safe::Logger
+  include Catcher::Logger
 
   def foo
     log.info "instance method"
@@ -13,11 +13,11 @@ class TestClass
   end
 end
 
-describe Safe::Logger do
+describe Catcher::Logger do
   before do
     @output = ""
     io = StringIO.new @output
-    Safe.setup_logger io
+    Catcher.setup_logger io
   end
 
   it "works with instance methods" do

@@ -1,12 +1,12 @@
-module Safe
+module Catcher
   module Logger
      module LogMethods
        def log
          return @logger if @logger
          class_prefix = self.to_s
-         # Q: Hey dude, why don't you just use Safe.logger.progname?
+         # Q: Hey dude, why don't you just use Catcher.logger.progname?
          # A: Because thread safety
-         @logger = PrefixedLogger.new Safe.logger, class_prefix
+         @logger = PrefixedLogger.new Catcher.logger, class_prefix
        end
      end
 
