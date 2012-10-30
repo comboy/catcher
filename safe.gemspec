@@ -13,6 +13,6 @@ Gem::Specification.new do |s|
   s.summary     = "Keep readable logs from your multithreaded ruby scripts"
   s.description = s.summary
 
-  s.files = Dir["{lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
 end
