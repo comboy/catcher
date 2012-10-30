@@ -7,7 +7,7 @@ This gem encapsulates pattern I use. First, somewhere in initialization you deci
 
     Safe.setup_logger "shit_happens.log"
 
-(arguments are the same as for Logger.new). Then in your classes:
+Arguments are the same as for Logger.new. Then in your classes:
 
     class Foo
       include Safe::Logger
@@ -17,7 +17,7 @@ This gem encapsulates pattern I use. First, somewhere in initialization you deci
       end
     end
 
-(it cold be also instance method). It will produce something like this:
+It could be also instance method. It will produce something like this:
 
     I, [2012-10-30 10:56:45 #20295]  INFO -- : Foo : gangnam style
 
