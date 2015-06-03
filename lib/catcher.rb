@@ -20,6 +20,16 @@ module Catcher
     end
   end
 
+  def self.thread_loop(progname = nil)
+    Thread.new do
+      loop do
+        block progname do
+          yield
+        end
+      end
+    end
+  end
+
   def self.log_exception(e, progname)
     text = progname ? "Exception raised by '#{progname}'\n\t"  : ""
     if e.kind_of? Exception

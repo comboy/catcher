@@ -1,19 +1,21 @@
 Catcher
 ====
 
-Everytime you create a thread in ruby, you need to add some exception handling to know if something goes wrong (and what exactly went wrong). Similary when you do background processing unless you already use some bigger framework for this. And when you have multiple threads, each one doing something that may or may not succeed, that's where you really appreciate logging done well.
+Everytime you create a thread in ruby, you need to add some exception handling to know if something goes wrong (and what exactly went wrong). Same when you do background processing, unless you are already using some bigger framework for this. This gem helps you with that. No fireworks, just makes you write fewer lines to catch and log an exception. 
 
-This gem encapsulates pattern I use. First, somewhere in initialization you decide where to log:
+First, somewhere in initialization you decide where to log:
 
     Catcher.setup_logger "shit_happens.log"
 
-Arguments are the same as for Logger.new. Then in your classes:
+Arguments are the same as for Logger.new. If you don't setup logger it defaults to STDOUT.
+
+Then in your classes:
 
     class Foo
       include Catcher::Logger
 
       def self.bar
-        log.info "gangnam style"
+        log.info "gangnam style" # wow, this gem is old
       end
     end
 
@@ -44,7 +46,7 @@ And finally, for threads, just use:
 
 Which is equal to Thread.new with Catcher.block inside.
 
-Description strings in Catcher.block and Catcher.thread are optional, but very much recommended. Comments and suggestions are very much welome.
+Description strings in Catcher.block and Catcher.thread are optional, but very much recommended. Comments and suggestions are welome.
 
 Happy threading.
 
@@ -58,7 +60,7 @@ In your Gemfile:
 Author
 -------
 
-Kacper Cieśla
+Kacper Cieśla (comboy)
 
 License
 -------
